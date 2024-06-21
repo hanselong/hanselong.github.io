@@ -19,6 +19,11 @@
 # Mono auto generated files
 mono_crash.*
 
+# npm build result
+/build/*.*
+/build/**/*.*
+
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
