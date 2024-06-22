@@ -6,8 +6,11 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import TestPage from './pages/test';
-import { Button } from '@mui/material';
-
+import Tab from './components/Tab';
+import TabPanel from './components/TabPanel';
+import TabsList from './components/TabsList';
+import { Tabs } from '@mui/base/Tabs';
+import HomeIcon from '@mui/icons-material/Home';
 
 const images: string[] = [
   img1,
@@ -17,15 +20,9 @@ const images: string[] = [
 
 const App: React.FC = () => {
 
-  // Code for looping borrowed from ChatGPT-4o
-  // Took some effort to get it to work the way I want it, but it's a learning experience.
+  // Creates a setter for image index that can be updated on the fly.
+  // type "number" with default value of 0
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
-
-  // Active setter for message
-  const [message, setMessage] = useState<String> ("Something message");
-
-  // Active setter for page to show
-  const [activePage, setActivePage] = useState<String>("");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -37,23 +34,21 @@ const App: React.FC = () => {
 
   const currentImage = images[currentImageIndex];
 
-  var handleClick = () => {
-    setActivePage("test");
-  };
-
   return (
     <div className="background" style={{ backgroundImage: `url(${currentImage})` }}>
-      <Router>
-      <Routes>
-        <Route path="/" element={activePage === "test" ? <TestPage /> : <Home />} />
-      </Routes>
-    </Router>
 
-    <Button onClick={handleClick} variant="contained" sx={{ backgroundColor: 'secondary.main' }}>
-      {message}
-    </Button>
-
-
+    <Tabs defaultValue={0}>
+      <TabsList>
+        <Tab value={0}> {<HomeIcon />} </Tab>
+        <Tab value={1}>Software Industry</Tab>
+        <Tab value={2}>Computer Science</Tab>
+        <Tab value={3}>Snow Sports</Tab>
+      </TabsList>
+      <TabPanel value={0}>Home</TabPanel>
+      <TabPanel value={1}><Router> <Routes> <Route path="/" element={<TestPage /> } /> </Routes> </Router></TabPanel>
+      <TabPanel value={2}><Router> <Routes> <Route path="/" element={<Home /> } /> </Routes> </Router></TabPanel>
+      <TabPanel value={3}>Snow Sports</TabPanel>
+    </Tabs>
 
     </div>
   );
