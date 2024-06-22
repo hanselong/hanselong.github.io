@@ -90,6 +90,11 @@ Components (to start with):
 * Content
 * Skipping Contact for now...?
 
+Dependencies
+Social Media Embedding:
+https://www.npmjs.com/package/react-social-media-embed
+npm i react-social-media-embed
+
 Functionality
 TBD
 

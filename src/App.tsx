@@ -6,6 +6,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import TestPage from './pages/test';
+import IG from './pages/IGTest';
 import Tab from './components/Tab';
 import TabPanel from './components/TabPanel';
 import TabsList from './components/TabsList';
@@ -47,7 +48,7 @@ const App: React.FC = () => {
       <TabPanel value={0}>Home</TabPanel>
       <TabPanel value={1}><Router> <Routes> <Route path="/" element={<TestPage /> } /> </Routes> </Router></TabPanel>
       <TabPanel value={2}><Router> <Routes> <Route path="/" element={<Home /> } /> </Routes> </Router></TabPanel>
-      <TabPanel value={3}>Snow Sports</TabPanel>
+      <TabPanel value={3}><Router> <Routes> <Route path="/" element={<IG /> } /> </Routes> </Router></TabPanel>
     </Tabs>
 
     </div>
