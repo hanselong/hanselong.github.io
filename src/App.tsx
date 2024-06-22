@@ -4,6 +4,10 @@ import img1 from './bg/IMG1.jpg';
 import img2 from './bg/IMG2.jpg';
 import img3 from './bg/IMG3.jpg';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import { Button } from '@mui/material';
+
 
 const images: string[] = [
   img1,
@@ -41,6 +45,18 @@ const App: React.FC = () => {
         <br />
           &nbsp;
       </div>
+      <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </Router>
+
+    <Button variant="contained" sx={{ backgroundColor: 'secondary.main' }}>
+      Custom Button
+    </Button>
+
+
+
     </div>
   );
 }

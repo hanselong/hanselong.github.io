@@ -1,43 +1,4 @@
-.App {
-  background-color: rgba(255, 255, 255, 0.5);
-  text-align: center;
-}
-
-.App-logo {
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin 15s infinite alternate;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: scale(0.75, 0.75);
-  }
-  to {
-    transform: scale(1, 1);
-  }
-}
-
-.background {
+.background { /* separate from the app layer */
   width: 100vw;
   height: 100vh;
   background-size: cover;
@@ -48,3 +9,10 @@
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
+.App {
+  background-color: rgba(255, 255, 255, 0.5); /* alpha mask */
+  text-align: center;
+}
+
+

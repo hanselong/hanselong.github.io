@@ -55,3 +55,49 @@ e.g.
 That will cause the predeploy and deploy scripts defined in package.json to run.
 
 Under the hood, the predeploy script will build a distributable version of the React app and store it in a folder named build. Then, the deploy script will push the contents of that folder to a new commit on the gh-pages branch of the GitHub repository, creating that branch if it doesn't already exist.
+
+## References
+https://blog.hubspot.com/website/react-websites-examples
+
+## Tenets
+1. Keep It Simple
+2. Low to No Maintenance
+3. Use Existing Components
+
+## Purpose
+Reference point for myself and others:
+* Professional/Software Industry reference -- connect with me on LinkedIn
+* Computer Science reference -- things my students may find useful
+* Snow Sports reference -- prep, getting started, etc.
+
+## Additional Steps
+Dev Tool:
+* VS Code
+* Github Pages
+* React/Typescript
+
+Design Framework:
+MUI - https://mui.com/
+
+Layout:
+Tabulation?
+
+Components (to start with):
+* Rotating Backgrounds
+* Alpha Mask panel
+* Main Nav
+* Tab Nav
+* Content
+* Skipping Contact for now...?
+
+Functionality
+TBD
+
+Testing
+TBD
+
+Optimization
+TBD
+
+Deployment Script
+For now: https://github.com/gitname/react-gh-pages?tab=readme-ov-file
