@@ -95,6 +95,10 @@ Social Media Embedding:
 https://www.npmjs.com/package/react-social-media-embed
 npm i react-social-media-embed
 
+Markdown rendering
+https://www.npmjs.com/package/react-markdown/v/8.0.6
+https://npmtrends.com/commonmark-vs-react-markdown-vs-remark
+
 Functionality
 TBD
 
