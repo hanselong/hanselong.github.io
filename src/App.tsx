@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, ReactNode } from 'react';
 import img1 from './bg/IMG1.jpg';
 import img2 from './bg/IMG2.jpg';
 import img3 from './bg/IMG3.jpg';
@@ -12,12 +12,30 @@ import TabPanel from './components/TabPanel';
 import TabsList from './components/TabsList';
 import { Tabs } from '@mui/base/Tabs';
 import HomeIcon from '@mui/icons-material/Home';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import TestMD from './content/test.md';
 
 const images: string[] = [
   img1,
   img2,
   img3
 ];
+
+/*
+const markdownContent = `
+# Hello, World!
+This is a **Markdown** document.
+- Item 1
+- Item 2
+- Item 3
+
+[Link](https://www.example.com)
+`;
+
+*/
+
+const markdownContent = TestMD;
 
 const App: React.FC = () => {
 
@@ -35,6 +53,8 @@ const App: React.FC = () => {
 
   const currentImage = images[currentImageIndex];
 
+  
+
   return (
     <div className="background" style={{ backgroundImage: `url(${currentImage})` }}>
 
@@ -45,7 +65,11 @@ const App: React.FC = () => {
         <Tab value={2}>Computer Science</Tab>
         <Tab value={3}>Snow Sports</Tab>
       </TabsList>
-      <TabPanel value={0}>Home</TabPanel>
+      <TabPanel value={0}> 
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          {markdownContent}
+        </ReactMarkdown>
+        </TabPanel>
       <TabPanel value={1}><Router> <Routes> <Route path="/" element={<TestPage /> } /> </Routes> </Router></TabPanel>
       <TabPanel value={2}><Router> <Routes> <Route path="/" element={<Home /> } /> </Routes> </Router></TabPanel>
       <TabPanel value={3}><Router> <Routes> <Route path="/" element={<IG /> } /> </Routes> </Router></TabPanel>
