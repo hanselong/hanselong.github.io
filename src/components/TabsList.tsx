@@ -7,7 +7,9 @@ const TabsList = styled(BaseTabsList)(
     ({ theme }) => `
     background-color: ${colors.blue[500]};
     border-radius: 50px;
-    margin-bottom: 9px;
+    margin-top: 9px;
+    margin-left: 9px;
+    margin-right: 9px;
     display: flex;
     align-items: center;
     justify-content: center;

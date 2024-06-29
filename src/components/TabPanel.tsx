@@ -12,7 +12,7 @@ const TabPanel = styled(BaseTabPanel)(
     background: ${theme.palette.mode === 'dark' ? colors.gray[900] : '#fff'};
     border: 1px solid ${theme.palette.mode === 'dark' ? colors.gray[700] : colors.gray[200]};
     border-radius: 12px;
-    background-color: rgba(255, 255, 255, 0.7); /* alpha mask */
+    background-color: rgba(255, 255, 255, 0.9); /* alpha mask */
     `,
   );
 

@@ -20,7 +20,6 @@ import img2 from './bg/IMG2.jpg';
 import img3 from './bg/IMG3.jpg';
 
 // Page Instances
-import Home from './pages/Home';
 import TestPage from './pages/test';
 import IG from './pages/IGTest';
 
@@ -53,27 +52,29 @@ const App: React.FC = () => {
   
   return (
     <div className="background" style={{ backgroundImage: `url(${currentImage})` }}>
+      <Tabs defaultValue={0}>
+        <TabsList>
+          <Tab value={0}> {<HomeIcon />} </Tab>
+          <Tab value={1}>Software Industry</Tab>
+          <Tab value={2}>Computer Science</Tab>
+          <Tab value={3}>Snow Sports</Tab>
+        </TabsList>
+        <div className="scrollable-container">
+          <TabPanel value={0}> 
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {testContent}
+            </ReactMarkdown>
+          </TabPanel>
+          <TabPanel value={1}><Router> <Routes> <Route path="/" element={<TestPage /> } /> </Routes> </Router></TabPanel>
+          <TabPanel value={2}><Router> <Routes> <Route path="/" element={<IG /> } /> </Routes> </Router></TabPanel>
+          <TabPanel value={3}>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              {snowContent}
+            </ReactMarkdown>
+          </TabPanel>
+        </div>
+      </Tabs>
 
-    <Tabs defaultValue={0}>
-      <TabsList>
-        <Tab value={0}> {<HomeIcon />} </Tab>
-        <Tab value={1}>Software Industry</Tab>
-        <Tab value={2}>Computer Science</Tab>
-        <Tab value={3}>Snow Sports</Tab>
-      </TabsList>
-      <TabPanel value={0}> 
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {testContent}
-        </ReactMarkdown>
-      </TabPanel>
-      <TabPanel value={1}><Router> <Routes> <Route path="/" element={<TestPage /> } /> </Routes> </Router></TabPanel>
-      <TabPanel value={2}><Router> <Routes> <Route path="/" element={<IG /> } /> </Routes> </Router></TabPanel>
-      <TabPanel value={3}>
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {snowContent}
-        </ReactMarkdown>
-      </TabPanel>
-    </Tabs>
 
     </div>
   );
